@@ -13,3 +13,6 @@ TODO:
 * Use the Tensorflow queues for data loading
 * Compatibility fix for carla checkpoint loading 
 * Fix the loss function (Use only one loss)
+
+## Contribution:
+Please feel free to pull a request. 

@@ -12,3 +12,4 @@ TODO:
 * Run all branches , but just back propagate on one ( use a mask for that).
 * Use the Tensorflow queues for data loading
 * Compatibility fix for carla checkpoint loading 
+* Fix the loss function (Use only one loss)

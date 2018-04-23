@@ -13,6 +13,7 @@ TODO:
 * Use the Tensorflow queues for data loading
 * Compatibility fix for carla checkpoint loading 
 * Fix the loss function (Use only one loss)
+* Balance the dataset according to labels in training mode
 
 ## Contribution:
 Please feel free to pull a request. 

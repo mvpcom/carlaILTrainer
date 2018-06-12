@@ -3,13 +3,13 @@
 Based on carlaTrain.ipynb.
 
 Changes:
-- Faster training (no bottleneck on feeding the data even without TF FileQueue)
-- One loss for all branches using mask tensor
+- Faster training (but still no TF FileQueue)
+- One loss for all branches using mask tensor and one hot encoding of branch number
 - No speed branch
 - no loading
 - no summary
+- tf printsfor branches
 """
-
 import sys
 # sys.version
 # sys.version_info
@@ -25,7 +25,6 @@ import os
 import imgaug as ia
 from imgaug import augmenters as iaa
 import numpy as np
-
 import h5py
 
 from keras.layers import ConvLSTM2D, MaxPool3D, BatchNormalization, MaxPool2D
@@ -95,6 +94,7 @@ datasetDirVal = '/unreliable/DATASETS/carla/AgentHuman/SeqVal/'
 
 datasetFilesTrain = glob.glob(datasetDirTrain+'*.h5')
 datasetFilesVal = glob.glob(datasetDirVal+'*.h5')
+
 print("Len train:{0},len val{1}".format(len(datasetFilesTrain),len(datasetFilesVal)))
 
 import itertools
@@ -133,13 +133,13 @@ def genBranch(fileNames=datasetFilesTrain, branchNum=3, batchSize=200):
     idx = 0
     while True:  # to make sure we never reach the end
         counter = 0
+
         idx = 0
+
         while counter <= batchSize - 1:
             idx = np.random.randint(len(fileNames) - 1)
             try:
                 data = h5py.File(fileNames[idx], 'r')
-#            except:
-#                print(idx, fileNames[idx])
 
                 dataIdx = np.random.randint(200 - 1)
                 if data['targets'][dataIdx][24] == branchNum:
@@ -387,6 +387,22 @@ def controlNet(inputs, targets, shape, dropoutVec, branchConfig, params, scopeNa
         with tf.name_scope("Network"):
             networkTensor = load_imitation_learning_network(inputs[0], inputs[1],
                                                             shape[1:3], dropoutVec)
+            """
+            Now it works as multiplication of one hot encoded mask and reducing sum of losses.
+            Could be also possilbe to do something like that:
+  
+            def f0(): return tf.square(tf.subtract(networkTensor[0], targets[0])
+            def f1(): return tf.square(tf.subtract(networkTensor[1], targets[1]))
+            ... other two branches ...
+            b =  inputs[1][0] # branch number 
+            # construct case operation in graph
+            conditioned_loss = tf.case({tf.equal(b, tf.constant(0)): f0, tf.equal(b, tf.constant(1)): f1,
+                      ... },
+                      default=f3, exclusive=True)
+            ..minimize(conditioned_loss)
+
+            That should be enough. I tested this approach in another project, should work here too.  
+            """
             parts = []
             for i in range(0, len(branchConfig)):
                 with tf.name_scope("Branch_" + str(i)):
@@ -400,8 +416,9 @@ def controlNet(inputs, targets, shape, dropoutVec, branchConfig, params, scopeNa
 
             means = tf.convert_to_tensor(parts)
             mask = tf.convert_to_tensor(inputs[1][0])
-            pr = tf.Print(mask, [mask])
-            contLoss = tf.reduce_sum(tf.multiply(tf.reduce_mean(means), mask))
+            pr = tf.Print(mask, [mask], summarize=5) # one hot vector of branch num % 4 (e.g. for 5: [0,1,0,0])
+            print(mask.get_shape())
+            contLoss = tf.reduce_sum(tf.multiply(tf.reduce_mean(means), mask)) # e.g. sets to 0 all branches except 5 
             contSolver = tf.train.AdamOptimizer(learning_rate=params[3],
                                                 beta1=params[4], beta2=params[5]).minimize(contLoss)
         tensors = {
@@ -528,17 +545,13 @@ with sessGraph.as_default():
                             netTensors['inputs'][1][1]: inputData[1], netTensors['dropoutVec']: dropoutVec,
                             netTensors['targets'][0]: ys[:, 10].reshape([batchSize, 1]),
                             netTensors['targets'][1]: ys[:, 0:3]}
-                _,  loss_value = sess.run([contSolver,  contLoss], feed_dict=feedDict)
-                # print(p)
-                # print(loss_value)
-                # write logs at every iteration
-                feedDict = {netTensors['inputs'][0]: xs, netTensors['inputs'][1][0]: inputData[0],
-                            netTensors['inputs'][1][1]: inputData[1], netTensors['dropoutVec']: [1] * len(dropoutVec),
-                            netTensors['targets'][0]: ys[:, 10].reshape([batchSize, 1]),
-                            netTensors['targets'][1]: ys[:, 0:3]}
+
+               
+                _, p, loss_value = sess.run([contSolver, pr, contLoss], feed_dict=feedDict)
+#                print(merged_summary_op)
 #                summary = merged_summary_op.eval(feed_dict=feedDict)
                 if steps % 10 == 0:  
- #                   summary_writer.add_summary(summary, epoch * num_images/batchSize + j)
+#                    summary_writer.add_summary(summary, epoch * num_images/batchSize + j)
                     print("  Train::: Epoch: %d, Step: %d, TotalSteps: %d, Loss: %g" %
                       (epoch, epoch * batchSize + j, steps, loss_value), cBranchesOutList[cur_branch])
 

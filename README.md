@@ -14,6 +14,11 @@ TODO:
 * Compatibility fix for carla checkpoint loading 
 * Fix the loss function (Use only one loss)
 * Balance the dataset according to labels in training mode
+* Test the whole system with the recent benchmark
 
 ## Contribution:
-Please feel free to pull a request. 
+Please feel free to pull a request. Any features and any changes are welcome. 
+
+All Contributors: 
+* Mojtaba Va'lipour: [@mvpcom](https://github.com/mvpcom)
+* Ivan Chernuha : [@merryHunter](https://github.com/merryHunter)

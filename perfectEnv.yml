@@ -1,0 +1,282 @@
+name: carlaSimPy2
+channels:
+- menpo
+- defaults
+dependencies:
+- alabaster=0.7.10=py27he5a193a_0
+- anaconda=5.0.1=py27hd9359a7_1
+- anaconda-client=1.6.5=py27hc8169bf_0
+- anaconda-navigator=1.6.9=py27hfbc306d_0
+- anaconda-project=0.8.0=py27hd7a9a97_0
+- asn1crypto=0.22.0=py27h94ebe91_1
+- astroid=1.5.3=py27h8f8f47c_0
+- astropy=2.0.2=py27h57072c0_4
+- babel=2.5.0=py27h20693cd_0
+- backports=1.0=py27h63c9359_1
+- backports.functools_lru_cache=1.4=py27he8db605_1
+- backports.shutil_get_terminal_size=1.0.0=py27h5bc021e_2
+- backports_abc=0.5=py27h7b3c97b_0
+- beautifulsoup4=4.6.0=py27h3f86ba9_1
+- bitarray=0.8.1=py27h304d4c6_0
+- bkcharts=0.2=py27h241ae91_0
+- blaze=0.11.3=py27h5f341da_0
+- bleach=2.0.0=py27h3a0dcc8_0
+- bokeh=0.12.10=py27he46cc6b_0
+- boto=2.48.0=py27h9556ac2_1
+- bottleneck=1.2.1=py27h21b16a3_0
+- bzip2=1.0.6=h0376d23_1
+- ca-certificates=2017.08.26=h1d4fec5_0
+- cairo=1.14.10=haa5651f_5
+- cdecimal=2.3=py27h4e63abe_1
+- certifi=2017.7.27.1=py27h9ceb091_0
+- cffi=1.10.0=py27hf1aaaf4_1
+- chardet=3.0.4=py27hfa10054_1
+- click=6.7=py27h4225b90_0
+- cloudpickle=0.4.0=py27ha64365b_0
+- clyent=1.2.2=py27h7276e6c_1
+- colorama=0.3.9=py27h5cde069_0
+- configparser=3.5.0=py27h5117587_0
+- contextlib2=0.5.5=py27hbf4c468_0
+- cryptography=2.0.3=py27hea39389_1
+- curl=7.55.1=hcb0b314_2
+- cycler=0.10.0=py27hc7354d3_0
+- cython=0.26.1=py27hdbcff32_0
+- cytoolz=0.8.2=py27hf14aec9_0
+- dask=0.15.3=py27hb94b45f_0
+- dask-core=0.15.3=py27h53a7ee6_0
+- datashape=0.5.4=py27hf507385_0
+- dbus=1.10.22=h3b5a359_0
+- decorator=4.1.2=py27h1544723_0
+- distributed=1.19.1=py27h38c4a05_0
+- docutils=0.14=py27hae222c1_0
+- entrypoints=0.2.3=py27h502b47d_2
+- enum34=1.1.6=py27h99a27e9_1
+- et_xmlfile=1.0.1=py27h75840f5_0
+- expat=2.2.4=hc00ebd1_1
+- fastcache=1.0.2=py27h4cb8e01_0
+- filelock=2.0.12=py27h38fa839_0
+- flask=0.12.2=py27h6d5c1cd_0
+- flask-cors=3.0.3=py27h1a8a27f_0
+- fontconfig=2.12.4=h88586e7_1
+- freetype=2.8=h52ed37b_0
+- funcsigs=1.0.2=py27h83f16ab_0
+- functools32=3.2.3.2=py27h4ead58f_1
+- futures=3.1.1=py27hdbc8cbb_0
+- get_terminal_size=1.0.0=haa9412d_0
+- gevent=1.2.2=py27h475ea6a_0
+- glib=2.53.6=hc861d11_1
+- glob2=0.5=py27hd3b7d1f_1
+- gmp=6.1.2=hb3b607b_0
+- gmpy2=2.0.8=py27hc856308_1
+- graphite2=1.3.10=hc526e54_0
+- greenlet=0.4.12=py27hac09c53_0
+- grin=1.2.1=py27h54abee7_1
+- gst-plugins-base=1.12.2=he3457e5_0
+- gstreamer=1.12.2=h4f93127_0
+- h5py=2.7.0=py27h71d1790_1
+- harfbuzz=1.5.0=h2545bd6_0
+- hdf5=1.10.1=hb0523eb_0
+- heapdict=1.0.0=py27h33770af_0
+- html5lib=0.999999999=py27hdf15f34_0
+- icu=58.2=h211956c_0
+- idna=2.6=py27h5722d68_1
+- imageio=2.2.0=py27hf108a7f_0
+- imagesize=0.7.1=py27hd17bf80_0
+- intel-openmp=2018.0.0=h15fc484_7
+- ipaddress=1.0.18=py27h337fd85_0
+- ipykernel=4.6.1=py27hc93e584_0
+- ipython=5.4.1=py27h36c99b6_1
+- ipython_genutils=0.2.0=py27h89fb69b_0
+- ipywidgets=7.0.0=py27h4fda95d_0
+- isort=4.2.15=py27hcfa4749_0
+- itsdangerous=0.24=py27hb8295c1_1
+- jbig=2.1=hdba287a_0
+- jdcal=1.3=py27h2cc5433_0
+- jedi=0.10.2=py27h8af4e35_0
+- jinja2=2.9.6=py27h82327ae_1
+- jpeg=9b=habf39ab_1
+- jsonschema=2.6.0=py27h7ed5aa4_0
+- jupyter=1.0.0=py27h505fd4b_0
+- jupyter_client=5.1.0=py27hbee1118_0
+- jupyter_console=5.2.0=py27hc6bee7e_1
+- jupyter_core=4.3.0=py27hcd9ae3a_0
+- jupyterlab=0.27.0=py27h42ebfef_2
+- jupyterlab_launcher=0.4.0=py27h0e16d15_0
+- lazy-object-proxy=1.3.1=py27h682c727_0
+- libedit=3.1=heed3624_0
+- libffi=3.2.1=h4deb6c0_3
+- libgcc-ng=7.2.0=h7cc24e2_2
+- libgfortran-ng=7.2.0=h9f7466a_2
+- libpng=1.6.32=hda9c8bc_2
+- libsodium=1.0.13=h31c71d8_2
+- libssh2=1.8.0=h8c220ad_2
+- libstdcxx-ng=7.2.0=h7a57d05_2
+- libtiff=4.0.8=h90200ff_9
+- libtool=2.4.6=hd50d1a6_0
+- libxcb=1.12=h84ff03f_3
+- libxml2=2.9.4=h6b072ca_5
+- libxslt=1.1.29=hcf9102b_5
+- llvmlite=0.20.0=py27_0
+- locket=0.2.0=py27h73929a2_1
+- lxml=4.1.0=py27hb025457_0
+- lzo=2.10=h1bfc0ba_1
+- markupsafe=1.0=py27h97b2822_1
+- matplotlib=2.1.0=py27h09aba24_0
+- mccabe=0.6.1=py27h0e7c7be_1
+- mistune=0.7.4=py27h6da7e90_0
+- mkl=2018.0.0=hb491cac_4
+- mkl-service=1.1.2=py27hb2d42c5_4
+- mpc=1.0.3=hf803216_4
+- mpfr=3.1.5=h12ff648_1
+- mpmath=0.19=py27h4bb41bd_2
+- msgpack-python=0.4.8=py27hc2fa789_0
+- multipledispatch=0.4.9=py27h9b5f95a_0
+- navigator-updater=0.1.0=py27h0f9cd39_0
+- nbconvert=5.3.1=py27he041f76_0
+- nbformat=4.4.0=py27hed7f2b2_0
+- ncurses=6.0=h06874d7_1
+- networkx=2.0=py27hfc23926_0
+- nltk=3.2.4=py27h41293c3_0
+- nose=1.3.7=py27heec2199_2
+- notebook=5.0.0=py27h3661c2b_2
+- numba=0.35.0=np113py27_10
+- numexpr=2.6.2=py27he5efce1_1
+- numpy=1.13.3=py27hbcc08e0_0
+- numpydoc=0.7.0=py27h9647a75_0
+- odo=0.5.1=py27h9170de3_0
+- olefile=0.44=py27h4bd3e3c_0
+- openpyxl=2.4.8=py27h9f0c937_1
+- openssl=1.0.2l=h077ae2c_5
+- packaging=16.8=py27h5e07c7c_1
+- pandas=0.20.3=py27h820b67f_2
+- pandoc=1.19.2.1=hea2e7c5_1
+- pandocfilters=1.4.2=py27h428e1e5_1
+- pango=1.40.11=h8191d47_0
+- partd=0.3.8=py27h4e55004_0
+- patchelf=0.9=hf79760b_2
+- path.py=10.3.1=py27hc258cac_0
+- pathlib2=2.3.0=py27h6e9d198_0
+- patsy=0.4.1=py27hd1cf8c0_0
+- pcre=8.41=hc71a17e_0
+- pep8=1.7.0=py27h444351c_0
+- pexpect=4.2.1=py27hcf82287_0
+- pickleshare=0.7.4=py27h09770e1_0
+- pillow=4.2.1=py27h7cd2321_0
+- pip=9.0.1=py27hbf658b2_3
+- pixman=0.34.0=h83dc358_2
+- pkginfo=1.4.1=py27hee1a9ad_1
+- ply=3.10=py27hd6d9ae5_0
+- prompt_toolkit=1.0.15=py27h1b593e1_0
+- psutil=5.4.0=py27h7da3062_0
+- ptyprocess=0.5.2=py27h4ccb14c_0
+- py=1.4.34=py27he5894e4_1
+- pycairo=1.13.3=py27hea6d626_0
+- pycodestyle=2.3.1=py27h904819d_0
+- pycosat=0.6.2=py27h1cf261c_1
+- pycparser=2.18=py27hefa08c5_1
+- pycrypto=2.6.1=py27h9abbf5c_1
+- pycurl=7.43.0=py27hcf8ebea_3
+- pyflakes=1.6.0=py27h904a57d_0
+- pygments=2.2.0=py27h4a8b6f5_0
+- pylint=1.7.4=py27h6bc7935_0
+- pyodbc=4.0.17=py27h7f7627d_0
+- pyopenssl=17.2.0=py27h189ff3b_0
+- pyparsing=2.2.0=py27hf1513f8_1
+- pyqt=5.6.0=py27h4b1e83c_5
+- pysocks=1.6.7=py27he2db6d2_1
+- pytables=3.4.2=py27h1f7bffc_2
+- pytest=3.2.1=py27h98000ae_1
+- python=2.7.14=hc2b0042_21
+- python-dateutil=2.6.1=py27h4ca5741_1
+- pytz=2017.2=py27hcac29fa_1
+- pywavelets=0.5.2=py27hecda097_0
+- pyyaml=3.12=py27h2d70dd7_1
+- pyzmq=16.0.2=py27h297844f_2
+- qt=5.6.2=h974d657_12
+- qtawesome=0.4.4=py27hd7914c3_0
+- qtconsole=4.3.1=py27hc444b0d_0
+- qtpy=1.3.1=py27h63d3751_0
+- readline=7.0=hac23ff0_3
+- requests=2.18.4=py27hc5b0589_1
+- rope=0.10.5=py27hcb0a616_0
+- ruamel_yaml=0.11.14=py27h672d447_2
+- scandir=1.6=py27hf7388dc_0
+- scikit-image=0.13.0=py27h06cb35d_1
+- scikit-learn=0.19.1=py27h445a80a_0
+- scipy=0.19.1=py27h1edc525_3
+- seaborn=0.8.0=py27h9d2aaa1_0
+- setuptools=36.5.0=py27h68b189e_0
+- simplegeneric=0.8.1=py27h19e43cd_0
+- singledispatch=3.4.0.3=py27h9bcb476_0
+- sip=4.18.1=py27he9ba0ab_2
+- six=1.11.0=py27h5f960f1_1
+- snowballstemmer=1.2.1=py27h44e2768_0
+- sortedcollections=0.5.3=py27h135218e_0
+- sortedcontainers=1.5.7=py27he59936f_0
+- sphinx=1.6.3=py27hf9b1778_0
+- sphinxcontrib=1.0=py27h1512b58_1
+- sphinxcontrib-websupport=1.0.1=py27hf906f22_1
+- spyder=3.2.4=py27h04a3490_0
+- sqlalchemy=1.1.13=py27hb0a01da_0
+- sqlite=3.20.1=h6d8b0f3_1
+- ssl_match_hostname=3.5.0.1=py27h4ec10b9_2
+- statsmodels=0.8.0=py27hc87d62d_0
+- subprocess32=3.2.7=py27h373dbce_0
+- sympy=1.1.1=py27hc28188a_0
+- tblib=1.3.2=py27h51fe5ba_0
+- terminado=0.6=py27h4be8df9_0
+- testpath=0.3.1=py27hc38d2c4_0
+- tk=8.6.7=h5979e9b_1
+- toolz=0.8.2=py27hd3b1e7e_0
+- tornado=4.5.2=py27h97b179f_0
+- traitlets=4.3.2=py27hd6ce930_0
+- typing=3.6.2=py27h66f49e2_0
+- unicodecsv=0.14.1=py27h5062da9_0
+- unixodbc=2.3.4=hc36303a_1
+- urllib3=1.22=py27ha55213b_0
+- wcwidth=0.1.7=py27h9e3e1ab_0
+- webencodings=0.5.1=py27hff10b21_1
+- werkzeug=0.12.2=py27hbf75dff_0
+- wheel=0.29.0=py27h411dd7b_1
+- widgetsnbextension=3.0.2=py27hcb77dec_1
+- wrapt=1.10.11=py27h04f6869_0
+- xlrd=1.1.0=py27ha77178f_1
+- xlsxwriter=1.0.2=py27h12cbc6b_0
+- xlwt=1.3.0=py27h3d85d97_0
+- xz=5.2.3=h2bcbf08_1
+- yaml=0.1.7=h96e3832_1
+- zeromq=4.2.2=hb0b69da_1
+- zict=0.1.3=py27h12c336c_0
+- zlib=1.2.11=hfbfcf68_1
+- opencv=2.4.11=nppy27_0
+- pip:
+  - appdirs==1.4.3
+  - backports-abc==0.5
+  - backports.functools-lru-cache==1.4
+  - backports.shutil-get-terminal-size==1.0.0
+  - backports.ssl-match-hostname==3.5.0.1
+  - backports.weakref==1.0.post1
+  - et-xmlfile==1.0.1
+  - future==0.16.0
+  - hickle==2.1.0
+  - imgaug==0.2.5
+  - ipython-genutils==0.2.0
+  - jupyter-client==5.1.0
+  - jupyter-console==5.2.0
+  - jupyter-core==4.3.0
+  - jupyterlab-launcher==0.4.0
+  - keras==2.1.2
+  - kivy-garden==0.1.4
+  - markdown==2.6.10
+  - mock==2.0.0
+  - pbr==3.1.1
+  - prompt-toolkit==1.0.15
+  - protobuf==3.5.1
+  - pygame==1.9.3
+  - ruamel-yaml==0.11.14
+  - tables==3.4.2
+  - tabulate==0.8.2
+  - tensorflow-gpu==1.4.1
+  - tensorflow-tensorboard==0.4.0rc3
+prefix: /home/vpcom/anaconda3/envs/carlaSimPy2
+

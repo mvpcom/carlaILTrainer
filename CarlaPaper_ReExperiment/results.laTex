@@ -1,0 +1,151 @@
+
+\documentclass{article}
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{Self-Driving Car Research}
+\author{Mojtaba Valipour}
+
+\maketitle
+
+\section{Model : CoRL-2017 Carla Paper_ReExperiment}
+
+\subsection{Tables}
+\subsubsection{Percentage of Success}
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+ Tasks        & Training Conditions   & New Town      & New Weather   & New Town \& Weather   \\
+\hline
+ Straight     & 0.98 ${\pm}$ 0.0          & 0.97 ${\pm}$ 0.0  & 0.97 ${\pm}$ 0.01 & 0.95 ${\pm}$ 0.0         \\
+ One Turn     & 0.94 ${\pm}$ 0.01         & 0.68 ${\pm}$ 0.01 & 0.94 ${\pm}$ 0.02 & 0.7 ${\pm}$ 0.0          \\
+ Navigation   & 0.89 ${\pm}$ 0.0          & 0.42 ${\pm}$ 0.0  & 0.83 ${\pm}$ 0.01 & 0.46 ${\pm}$ 0.02        \\
+ Nav. Dynamic & 0.88 ${\pm}$ 0.0          & 0.42 ${\pm}$ 0.02 & 0.8 ${\pm}$ 0.03  & 0.46 ${\pm}$ 0.03        \\
+\hline
+\end{tabular}
+Success rate for the agent (mean and standard deviation shown).
+\end{center}
+\subsubsection{Infractions : Straight}
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+ Infractions          & Training Conditions   & New Town      & New Weather   & New Town \& Weather   \\
+\hline
+ Opposite Lane        & 16.78 ${\pm}$ 0.04        & 2.89 ${\pm}$ 0.0  & 8.13 ${\pm}$ 0.13 & 3.89 ${\pm}$ 0.5         \\
+ Sidewalk             & 7.46 ${\pm}$ 1.32         & 2.65 ${\pm}$ 0.34 & 8.13 ${\pm}$ 0.13 & 2.26 ${\pm}$ 0.2         \\
+ Collision-static     & 16.78 ${\pm}$ 0.04        & 8.67 ${\pm}$ 0.0  & 8.13 ${\pm}$ 0.13 & 12.73 ${\pm}$ 0.01       \\
+ Collision-car        & 16.78 ${\pm}$ 0.04        & 8.67 ${\pm}$ 0.0  & 8.13 ${\pm}$ 0.13 & 12.73 ${\pm}$ 0.01       \\
+ Collision-pedestrian & 16.78 ${\pm}$ 0.04        & 8.67 ${\pm}$ 0.0  & 8.13 ${\pm}$ 0.13 & 12.73 ${\pm}$ 0.01       \\
+\hline
+\end{tabular}
+Average number of kilometers travelled before an infraction. 
+\end{center}
+\subsubsection{Infractions : One Turn}
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+ Infractions          & Training Conditions   & New Town       & New Weather    & New Town \& Weather   \\
+\hline
+ Opposite Lane        & 13.09 ${\pm}$ 2.68        & 1.03 ${\pm}$ 0.11  & 16.86 ${\pm}$ 0.09 & 1.35 ${\pm}$ 0.1         \\
+ Sidewalk             & 11.22 ${\pm}$ 0.1         & 0.9 ${\pm}$ 0.05   & 16.86 ${\pm}$ 0.09 & 0.95 ${\pm}$ 0.04        \\
+ Collision-static     & 33.66 ${\pm}$ 0.3         & 17.68 ${\pm}$ 0.26 & 16.86 ${\pm}$ 0.09 & 26.88 ${\pm}$ 0.7        \\
+ Collision-car        & 33.66 ${\pm}$ 0.3         & 17.68 ${\pm}$ 0.26 & 16.86 ${\pm}$ 0.09 & 26.88 ${\pm}$ 0.7        \\
+ Collision-pedestrian & 33.66 ${\pm}$ 0.3         & 17.68 ${\pm}$ 0.26 & 16.86 ${\pm}$ 0.09 & 26.88 ${\pm}$ 0.7        \\
+\hline
+\end{tabular}
+Average number of kilometers travelled before an infraction. 
+\end{center}
+\subsubsection{Infractions : Navigation}
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+ Infractions          & Training Conditions   & New Town      & New Weather    & New Town \& Weather   \\
+\hline
+ Opposite Lane        & 17.4 ${\pm}$ 3.7          & 2.26 ${\pm}$ 0.05 & 23.47 ${\pm}$ 8.47 & 3.12 ${\pm}$ 0.17        \\
+ Sidewalk             & 16.27 ${\pm}$ 4.14        & 0.62 ${\pm}$ 0.03 & 12.71 ${\pm}$ 3.75 & 0.68 ${\pm}$ 0.03        \\
+ Collision-static     & 66.63 ${\pm}$ 0.2         & 24.88 ${\pm}$ 0.5 & 35.12 ${\pm}$ 0.28 & 40.43 ${\pm}$ 0.45       \\
+ Collision-car        & 66.63 ${\pm}$ 0.2         & 24.88 ${\pm}$ 0.5 & 35.12 ${\pm}$ 0.28 & 40.43 ${\pm}$ 0.45       \\
+ Collision-pedestrian & 66.63 ${\pm}$ 0.2         & 24.88 ${\pm}$ 0.5 & 35.12 ${\pm}$ 0.28 & 40.43 ${\pm}$ 0.45       \\
+\hline
+\end{tabular}
+Average number of kilometers travelled before an infraction. 
+\end{center}
+\subsubsection{Infractions : Navigation With Dynamic Obstacles}
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+ Infractions          & Training Conditions   & New Town      & New Weather     & New Town \& Weather   \\
+\hline
+ Opposite Lane        & 20.17 ${\pm}$ 2.74        & 1.5 ${\pm}$ 0.18  & 24.95 ${\pm}$ 12.95 & 1.66 ${\pm}$ 0.04        \\
+ Sidewalk             & 13.05 ${\pm}$ 2.98        & 0.65 ${\pm}$ 0.06 & 4.26 ${\pm}$ 0.87   & 0.68 ${\pm}$ 0.07        \\
+ Collision-static     & 4.51 ${\pm}$ 1.07         & 0.38 ${\pm}$ 0.05 & 2.15 ${\pm}$ 0.55   & 0.41 ${\pm}$ 0.05        \\
+ Collision-car        & 1.19 ${\pm}$ 0.14         & 0.28 ${\pm}$ 0.03 & 1.48 ${\pm}$ 0.28   & 0.27 ${\pm}$ 0.02        \\
+ Collision-pedestrian & 14.14 ${\pm}$ 5.64        & 1.66 ${\pm}$ 0.15 & 7.35 ${\pm}$ 0.97   & 1.83 ${\pm}$ 0.14        \\
+\hline
+\end{tabular}
+Average number of kilometers travelled before an infraction. 
+\end{center}
+
+\subsubsection{Num Infractions : Straight}
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+ Number of Infractions   & Training Conditions   & New Town      & New Weather   & New Town \& Weather   \\
+\hline
+ Opposite Lane           & 0.0 ${\pm}$ 0.0           & 3.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0   & 3.33 ${\pm}$ 0.47        \\
+ Sidewalk                & 2.33 ${\pm}$ 0.47         & 3.33 ${\pm}$ 0.47 & 0.0 ${\pm}$ 0.0   & 5.67 ${\pm}$ 0.47        \\
+ Collision-static        & 0.0 ${\pm}$ 0.0           & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0          \\
+ Collision-car           & 0.0 ${\pm}$ 0.0           & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0          \\
+ Collision-pedestrian    & 0.0 ${\pm}$ 0.0           & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0          \\
+\hline
+\end{tabular}
+Number of infractions occured in the whole path
+\end{center}
+\subsubsection{Num Infractions : One Turn}
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+ Number of Infractions   & Training Conditions   & New Town       & New Weather   & New Town \& Weather   \\
+\hline
+ Opposite Lane           & 2.67 ${\pm}$ 0.47         & 17.33 ${\pm}$ 1.7  & 0.33 ${\pm}$ 0.47 & 20.0 ${\pm}$ 1.41        \\
+ Sidewalk                & 3.0 ${\pm}$ 0.0           & 19.67 ${\pm}$ 1.25 & 0.33 ${\pm}$ 0.47 & 28.33 ${\pm}$ 0.94       \\
+ Collision-static        & 0.0 ${\pm}$ 0.0           & 0.0 ${\pm}$ 0.0    & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0          \\
+ Collision-car           & 0.0 ${\pm}$ 0.0           & 0.0 ${\pm}$ 0.0    & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0          \\
+ Collision-pedestrian    & 0.0 ${\pm}$ 0.0           & 0.0 ${\pm}$ 0.0    & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0          \\
+\hline
+\end{tabular}
+Number of infractions occured in the whole path
+\end{center}
+\subsubsection{Num Infractions : Navigation}
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+ Number of Infractions   & Training Conditions   & New Town       & New Weather   & New Town \& Weather   \\
+\hline
+ Opposite Lane           & 4.0 ${\pm}$ 0.82          & 11.0 ${\pm}$ 0.0   & 1.67 ${\pm}$ 0.47 & 13.0 ${\pm}$ 0.82        \\
+ Sidewalk                & 4.33 ${\pm}$ 0.94         & 40.33 ${\pm}$ 1.25 & 3.0 ${\pm}$ 0.82  & 59.33 ${\pm}$ 1.7        \\
+ Collision-static        & 0.0 ${\pm}$ 0.0           & 0.0 ${\pm}$ 0.0    & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0          \\
+ Collision-car           & 0.0 ${\pm}$ 0.0           & 0.0 ${\pm}$ 0.0    & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0          \\
+ Collision-pedestrian    & 0.0 ${\pm}$ 0.0           & 0.0 ${\pm}$ 0.0    & 0.0 ${\pm}$ 0.0   & 0.0 ${\pm}$ 0.0          \\
+\hline
+\end{tabular}
+Number of infractions occured in the whole path
+\end{center}
+\subsection{Num Infractions : Navigation With Dynamic Obstacles}
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+ Number of Infractions   & Training Conditions   & New Town        & New Weather   & New Town \& Weather   \\
+\hline
+ Opposite Lane           & 3.33 ${\pm}$ 0.47         & 16.67 ${\pm}$ 1.89  & 2.33 ${\pm}$ 1.89 & 22.67 ${\pm}$ 0.47       \\
+ Sidewalk                & 5.33 ${\pm}$ 1.25         & 38.33 ${\pm}$ 3.4   & 8.33 ${\pm}$ 1.89 & 56.33 ${\pm}$ 6.85       \\
+ Collision-static        & 15.33 ${\pm}$ 3.09        & 67.33 ${\pm}$ 10.4  & 17.0 ${\pm}$ 4.97 & 94.0 ${\pm}$ 13.49       \\
+ Collision-car           & 56.0 ${\pm}$ 6.38         & 90.33 ${\pm}$ 11.67 & 24.0 ${\pm}$ 5.72 & 139.67 ${\pm}$ 8.73      \\
+ Collision-pedestrian    & 5.33 ${\pm}$ 1.7          & 15.0 ${\pm}$ 1.41   & 4.67 ${\pm}$ 0.47 & 20.67 ${\pm}$ 1.7        \\
+\hline
+\end{tabular}
+Number of infractions occured in the whole path
+\end{center}
+
+\end{document}

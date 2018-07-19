@@ -9,7 +9,7 @@ Please check out [issue](https://github.com/carla-simulator/imitation-learning/i
 
 
 TODO:
-* Run all branches , but just back propagate on one ( use a mask for that).
+* Run all branches , but just back propagate on one ( use a mask for that). @merryHunter solved this in the python file. 
 * Use the Tensorflow queues for data loading
 * Compatibility fix for carla checkpoint loading 
 * Fix the loss function (Use only one loss)
